@@ -1,0 +1,108 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:import/typescript"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "jsx-a11y",
+    "react-hooks",
+    "eslint-plugin-import-helpers"
+  ],
+  "rules": {
+    /* Enable jsx to tsx*/
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [ ".tsx" ] }
+    ],
+    
+    /* Disable the need to add the file extension*/
+    "import/extensions": [
+      "error",
+      { "ts": "never", "tsx": "never", "js": "never", "jsx": "never" }
+    ],
+
+    /* Disable need to add 'export default' */
+    "import/prefer-default-export": "off",
+
+    /* Disable arrow function needs */
+    "arrow-body-style": "off",
+
+    /* Enable and add import order helpers */
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "module",
+          [
+            "/^~/component/",
+            "/^~/pages/",
+            "/^~/routes/",
+            "/^~/services/",
+            "/^~/styles/",
+            "/^~/utils/",
+            "/^~/"
+          ], [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
+
+    /* Disable need to add space between functions/methods and parentheses */
+    "keyword-spacing": [
+      "warn",
+      {
+        "overrides": {
+          "if": {
+            "after": false
+          },
+          "for": {
+            "after": false
+          },
+          "while": {
+            "after": false
+          }
+        }
+      }
+    ]
+  },
+
+  /* Configure path alias */
+  "settings": {
+    "import/resolver": {
+      "typescript": { "directory": "." },
+      "node": {
+        "extensions": [ ".ts", ".tsx", ".js", ".jsx" ]
+      },
+      "babel-plugin-root-import": {
+        "paths": [{ "rootPathSuffix": "src" }]
+      }
+    }
+  }
+}

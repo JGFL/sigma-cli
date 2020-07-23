@@ -1,0 +1,87 @@
+{
+  "env": {
+    "es2020": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers"
+  ],
+  "rules": {
+    /* Enable reassing const */
+    "no-param-reassign": "off",
+
+    /* Fix no-used-vars */
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    
+    /* Disable need to add default export */
+    "import/prefer-default-export": "off",
+
+    /* Disable need of extension */
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+
+    /* Disable object new line */
+    "object-curly-newline": "off",
+
+    /* Enable console */
+    "no-console":"off",
+
+    /* Defines max row length */
+    "max-len": [
+      "warn",
+      { "code": 120 }
+    ],
+
+    /* Enable and add import order helpers */
+    "import-helpers/order-imports": [
+      "error",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "module",
+          "/^~/",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
+
+    /* Disable need to add space between functions/methods and parentheses */
+    "keyword-spacing": [
+      "warn",
+      {
+        "overrides": {
+          "if": {
+            "after": false
+          },
+          "for": {
+            "after": false
+          },
+          "while": {
+            "after": false
+          },
+          "catch": {
+            "after": false
+          },
+          "switch": {
+            "after": false
+          }
+        }
+      }
+    ]
+  }
+}
