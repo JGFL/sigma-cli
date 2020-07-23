@@ -1,6 +1,6 @@
 {
   "name": "sigma-cli",
-  "version": "0.5.4r1",
+  "version": "0.5.4r2",
   "description": "Sigma cli, cli for React/React Native/Expo",
   "types": "build/types/types.d.ts",
   "bin": {
