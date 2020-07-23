@@ -1,0 +1,7 @@
+.gitignore
+/src
+.editorconfig
+.eslint*
+.tsconfig.json
+/docs
+README.md
